@@ -27,7 +27,7 @@
 
 - (void) typeTransform
 {
-    self.title = @"Zzzzzz";
+    NSString *str = [NSString stringWithString:@"ppp"];
 }
 
 - (void)didReceiveMemoryWarning {
