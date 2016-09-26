@@ -9,11 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+<UIWebViewDelegate>
 {
-    UITableView *_myTableView;
+//    UITableView *_myTableView;
+    UIWebView *_myWebView;
+    
 }
 
-@property(nonatomic,readwrite,copy)UITableView *myTableView;
+@property(nonatomic,readwrite,copy)UIWebView *myWebView;
 
 @end
 
