@@ -25,11 +25,14 @@
     [self initMyWebView];
 }
 
+
+#pragma mark - typeTransform
 - (void) typeTransform
 {
     
 }
 
+#pragma mark - WebView initialization
 - (void) initMyWebView
 {
     _myWebView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
@@ -41,16 +44,19 @@
     NSString *path = [[NSBundle mainBundle] pathForResource:@"Page/HomePage" ofType:@"html"];
     NSURL *url = [NSURL fileURLWithPath:path];
     [_myWebView loadRequest:[NSURLRequest requestWithURL:url]];
-    
-    
-    
-    
-    
     [self.view addSubview:_myWebView];
 }
 
+#pragma mark - js invoke OC
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
+    
+    
+    return YES;
+}
 
 
+#pragma mark - OC invoke js
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     [_myWebView stringByEvaluatingJavaScriptFromString:@"alert('load successed!');"];
