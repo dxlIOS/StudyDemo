@@ -27,7 +27,7 @@
 
 - (void) typeTransform
 {
-    
+    NSString *str = [NSString stringWithString:@"ppp"];
 }
 
 - (void)didReceiveMemoryWarning {
