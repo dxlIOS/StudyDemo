@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		090B01C71D99071F00DFEFCE /* Page in Resources */ = {isa = PBXBuildFile; fileRef = 090B01C61D99071F00DFEFCE /* Page */; };
+		090B01C91D993D6000DFEFCE /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = 090B01C81D993D6000DFEFCE /* test.png */; };
 		0916F0051D98EFA10071BD30 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0916F0041D98EFA10071BD30 /* main.m */; };
 		0916F0081D98EFA10071BD30 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0916F0071D98EFA10071BD30 /* AppDelegate.m */; };
 		0916F00B1D98EFA10071BD30 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0916F00A1D98EFA10071BD30 /* ViewController.m */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		090B01C61D99071F00DFEFCE /* Page */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Page; sourceTree = "<group>"; };
+		090B01C81D993D6000DFEFCE /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = test.png; path = ../../../../Downloads/test.png; sourceTree = "<group>"; };
 		0916F0001D98EFA10071BD30 /* StudyDemo_0926.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyDemo_0926.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0916F0041D98EFA10071BD30 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0916F0061D98EFA10071BD30 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -44,6 +46,7 @@
 		0916EFF71D98EFA10071BD30 = {
 			isa = PBXGroup;
 			children = (
+				090B01C81D993D6000DFEFCE /* test.png */,
 				090B01C61D99071F00DFEFCE /* Page */,
 				0916F0021D98EFA10071BD30 /* StudyDemo_0926 */,
 				0916F0011D98EFA10071BD30 /* Products */,
@@ -140,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				090B01C71D99071F00DFEFCE /* Page in Resources */,
+				090B01C91D993D6000DFEFCE /* test.png in Resources */,
 				0916F0131D98EFA10071BD30 /* LaunchScreen.storyboard in Resources */,
 				0916F0101D98EFA10071BD30 /* Assets.xcassets in Resources */,
 				0916F00E1D98EFA10071BD30 /* Main.storyboard in Resources */,

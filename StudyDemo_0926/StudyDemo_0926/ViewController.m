@@ -21,8 +21,9 @@
     self.title = @"Study";
     self.navigationController.navigationBar.translucent = NO;
     
-    [self dataTypeTransform];
     [self initMyWebView];
+    [self dataTypeTransform];
+    
 }
 
 
@@ -55,15 +56,49 @@
     NSLog(@"float & NSString%@",stringFloat);
     
     //NSData & NSString
-    NSData *dataStr = [NSData dataWithContentsOfFile:@"foo bar hoge"];
+    
+    NSString *strData = @"ooooooo";
+    NSData *dataStr = [strData dataUsingEncoding:NSUTF8StringEncoding];
+    NSLog(@"NSData & NSString:%@",dataStr);
+    
     NSString *stringData = [[NSString alloc] initWithData:dataStr encoding:NSUTF8StringEncoding];
     NSLog(@"NSData & NSString:%@",stringData);
     
-    stringData = @"why";
-    dataStr = [stringData dataUsingEncoding:NSUTF8StringEncoding];
-    NSLog(@"NSData & NSString:%@",dataStr);
-    
     //NSData & Byte
+    Byte *byteData = (Byte *)[dataStr bytes];
+    
+    //why the result is oooooooêk≠îZ˙?
+    NSLog(@"NSData & Byte:%s",byteData);
+    
+    Byte byte[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17};
+    NSData *dataByte = [NSData dataWithBytes:byte length:18];
+    NSLog(@"%@",dataByte);
+    
+    //NSData & UIImage
+    UIImage *image = [UIImage imageNamed:@"test.png"];
+    NSData *dataImage = UIImagePNGRepresentation(image);
+    
+//    NSLog(@"%@",dataImage); ->too long
+    
+    UIImage *imageData = [UIImage imageWithData:dataImage];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:imageData];
+    imageView.frame = CGRectMake(self.view.bounds.size.width - 150, self.view.bounds.size.height - 200, 100, 100);
+    [self.view addSubview:imageView];
+    
+    //NSString & NSDate
+    NSDate *time = [NSDate date];
+    NSString *timeStr = [NSString stringWithFormat:@"%f",[time timeIntervalSince1970]];
+    NSLog(@"the timeStr is:%@",timeStr);
+    
+    
+    NSDate *newTime = [NSDate dateWithTimeIntervalSince1970:[timeStr intValue]];
+    NSLog(@"%@",newTime);
+    
+    
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateStyle:NSDateFormatterFullStyle];
+    timeStr = [dateFormat stringFromDate:time];
+    NSLog(@"the time is:%@",timeStr);
     
     
 }
