@@ -21,14 +21,50 @@
     self.title = @"Study";
     self.navigationController.navigationBar.translucent = NO;
     
-    [self typeTransform];
+    [self dataTypeTransform];
     [self initMyWebView];
 }
 
 
-#pragma mark - typeTransform
-- (void) typeTransform
+#pragma mark - dataTypeTransform
+- (void) dataTypeTransform
 {
+    //NSArray & NSString
+    NSArray *array = [NSArray arrayWithObjects:@"a",@"b",@"c", nil];
+    NSString *str = [array componentsJoinedByString:@" "];
+    NSLog(@"NSArray & NSString:%@",str);
+    
+    NSArray *arrayStr = [str componentsSeparatedByString:@" "];
+    NSLog(@"NSArray & NSString:%@",arrayStr);
+    
+    //NSInteger & NSString
+    NSInteger number = 20;
+    NSString *stringInt = [NSString stringWithFormat:@"%ld",number];
+    NSLog(@"int & NSString:%@",stringInt);
+    stringInt = @"30";
+    
+    number = [stringInt integerValue];
+    NSLog(@"int & NSString:%ld",number);
+    
+    //float & NSString
+    stringInt = @"20.55";
+    float floatString = [stringInt floatValue];
+    NSLog(@"float & NSString:%f",floatString);
+    
+    NSString *stringFloat = [NSString stringWithFormat:@"%f",11.11];
+    NSLog(@"float & NSString%@",stringFloat);
+    
+    //NSData & NSString
+    NSData *dataStr = [NSData dataWithContentsOfFile:@"foo bar hoge"];
+    NSString *stringData = [[NSString alloc] initWithData:dataStr encoding:NSUTF8StringEncoding];
+    NSLog(@"NSData & NSString:%@",stringData);
+    
+    stringData = @"why";
+    dataStr = [stringData dataUsingEncoding:NSUTF8StringEncoding];
+    NSLog(@"NSData & NSString:%@",dataStr);
+    
+    //NSData & Byte
+    
     
 }
 
@@ -50,7 +86,7 @@
 #pragma mark - js invoke OC
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
-    
+    //still trying
     
     return YES;
 }
