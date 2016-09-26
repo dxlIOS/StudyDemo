@@ -27,7 +27,7 @@
 
 - (void) typeTransform
 {
-    
+    self.title = @"Zzzzzz";
 }
 
 - (void)didReceiveMemoryWarning {
