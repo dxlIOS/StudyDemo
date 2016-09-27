@@ -121,9 +121,42 @@
 #pragma mark - js invoke OC
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
-    //still trying
+//    NSString *requestStr = request.URL.absoluteString;
+//    NSRange range = [requestStr rangeOfString:@"dxl://"];
+//    if (range.location != NSNotFound) {
+//        NSString *method = [requestStr substringFromIndex:range.location + range.length];
+//        SEL func = NSSelectorFromString(method);
+//        if([self respondsToSelector:func] == YES)
+//        {
+//            [self performSelector:func withObject:nil];
+//        }
+//    }
+    
+    NSString *requestStr = request.URL.absoluteString;
+    NSString *methodName = [requestStr substringFromIndex:6];
+    SEL func = NSSelectorFromString(methodName);
+    if ([self respondsToSelector:func]) {
+        [self performSelector:func];
+    }
     
     return YES;
+}
+
+- (void) writeImageToDevice
+{
+    UIGraphicsBeginImageContext(self.view.frame.size);
+    [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    imageView.frame = CGRectMake(0, self.view.bounds.size.height - 200, 100, 100);
+    [self.view addSubview:imageView];
+    
+    
+    
+//    NSData *data = UIImageJPEGRepresentation(image, 1);
+//    [data writeToFile:[NSHomeDirectory() stringByAppendingPathComponent:@"Documents/first.jpg"] atomically:YES];
+    
 }
 
 
