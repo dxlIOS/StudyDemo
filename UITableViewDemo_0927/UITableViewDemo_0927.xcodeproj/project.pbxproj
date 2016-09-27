@@ -13,6 +13,7 @@
 		0930583E1D99F4C900BD62C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0930583C1D99F4C900BD62C0 /* Main.storyboard */; };
 		093058401D99F4C900BD62C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0930583F1D99F4C900BD62C0 /* Assets.xcassets */; };
 		093058431D99F4C900BD62C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 093058411D99F4C900BD62C0 /* LaunchScreen.storyboard */; };
+		0930584C1D9A051200BD62C0 /* AdjustWidthForCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0930584B1D9A051200BD62C0 /* AdjustWidthForCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		0930583F1D99F4C900BD62C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		093058421D99F4C900BD62C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		093058441D99F4C900BD62C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0930584A1D9A051200BD62C0 /* AdjustWidthForCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdjustWidthForCell.h; sourceTree = "<group>"; };
+		0930584B1D9A051200BD62C0 /* AdjustWidthForCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdjustWidthForCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,8 @@
 				093058371D99F4C900BD62C0 /* AppDelegate.m */,
 				093058391D99F4C900BD62C0 /* ViewController.h */,
 				0930583A1D99F4C900BD62C0 /* ViewController.m */,
+				0930584A1D9A051200BD62C0 /* AdjustWidthForCell.h */,
+				0930584B1D9A051200BD62C0 /* AdjustWidthForCell.m */,
 				0930583C1D99F4C900BD62C0 /* Main.storyboard */,
 				0930583F1D99F4C900BD62C0 /* Assets.xcassets */,
 				093058411D99F4C900BD62C0 /* LaunchScreen.storyboard */,
@@ -152,6 +157,7 @@
 				0930583B1D99F4C900BD62C0 /* ViewController.m in Sources */,
 				093058381D99F4C900BD62C0 /* AppDelegate.m in Sources */,
 				093058351D99F4C900BD62C0 /* main.m in Sources */,
+				0930584C1D9A051200BD62C0 /* AdjustWidthForCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,7 +270,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = UITableViewDemo_0927/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Study.UITableViewDemo-0927";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -276,7 +282,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = UITableViewDemo_0927/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Study.UITableViewDemo-0927";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -302,6 +308,7 @@
 				093058491D99F4C900BD62C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+<UITableViewDelegate,UITableViewDataSource>
 {
     UITableView *_myTableView;
+    NSMutableArray *_dataArray;
+    
 }
 
 @end
