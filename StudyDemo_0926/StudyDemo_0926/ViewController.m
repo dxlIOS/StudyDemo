@@ -133,10 +133,11 @@
 //    }
     
     NSString *requestStr = request.URL.absoluteString;
-    NSString *methodName = [requestStr substringFromIndex:6];
+    NSString *methodName = [requestStr substringFromIndex:4];
     SEL func = NSSelectorFromString(methodName);
     if ([self respondsToSelector:func]) {
         [self performSelector:func];
+        return NO;
     }
     
     return YES;

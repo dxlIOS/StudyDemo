@@ -9,5 +9,5 @@ function alertTest()
 
 function sendMsgForCapture()
 {
-    window.location.href = "dxl://writeImageToDevice";
+    window.location = "dxl:writeImageToDevice";
 }
