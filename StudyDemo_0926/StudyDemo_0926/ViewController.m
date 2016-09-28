@@ -164,7 +164,7 @@
 #pragma mark - OC invoke js
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    [_myWebView stringByEvaluatingJavaScriptFromString:@"alert('load successed!');"];
+//    [_myWebView stringByEvaluatingJavaScriptFromString:@"alert('load successed!');"];
 }
 
 

@@ -9,7 +9,18 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+<UIWebViewDelegate,NSURLConnectionDataDelegate>
+{
+    UIWebView *_personalWebView;
+    NSURLConnection *_myConnection;
+    NSMutableData *_urlData;
+}
+
+@property(nonatomic,retain)UIWebView *personalWebView;
+@property(nonatomic,retain)NSURLConnection *myConnection;
+@property(nonatomic,retain)NSMutableData *urlData;
 
 
+#define Dlog NSLog
 @end
 

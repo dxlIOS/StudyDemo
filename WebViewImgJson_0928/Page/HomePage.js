@@ -1,13 +1,7 @@
 
 
 
-
-function alertTest()
+function requestForParse()
 {
-    alert("Test");
-}
-
-function sendMsgForCapture()
-{
-    window.location = "dxl:writeImageToDevice";
+    window.location.href = "http://www.weather.com.cn/data/cityinfo/101020100.html";
 }
