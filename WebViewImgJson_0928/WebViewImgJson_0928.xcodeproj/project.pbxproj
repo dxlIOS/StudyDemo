@@ -13,6 +13,9 @@
 		09C9B9EB1D9B62630039CAE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09C9B9E91D9B62630039CAE6 /* Main.storyboard */; };
 		09C9B9ED1D9B62630039CAE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09C9B9EC1D9B62630039CAE6 /* Assets.xcassets */; };
 		09C9B9F01D9B62630039CAE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09C9B9EE1D9B62630039CAE6 /* LaunchScreen.storyboard */; };
+		09C9B9FB1D9B62A40039CAE6 /* HomePage.css in Resources */ = {isa = PBXBuildFile; fileRef = 09C9B9F81D9B62A40039CAE6 /* HomePage.css */; };
+		09C9B9FC1D9B62A40039CAE6 /* HomePage.html in Resources */ = {isa = PBXBuildFile; fileRef = 09C9B9F91D9B62A40039CAE6 /* HomePage.html */; };
+		09C9B9FD1D9B62A40039CAE6 /* HomePage.js in Resources */ = {isa = PBXBuildFile; fileRef = 09C9B9FA1D9B62A40039CAE6 /* HomePage.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		09C9B9EC1D9B62630039CAE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09C9B9EF1D9B62630039CAE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		09C9B9F11D9B62630039CAE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09C9B9F81D9B62A40039CAE6 /* HomePage.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = HomePage.css; sourceTree = "<group>"; };
+		09C9B9F91D9B62A40039CAE6 /* HomePage.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = HomePage.html; sourceTree = "<group>"; };
+		09C9B9FA1D9B62A40039CAE6 /* HomePage.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = HomePage.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +48,7 @@
 		09C9B9D41D9B62620039CAE6 = {
 			isa = PBXGroup;
 			children = (
+				09C9B9F71D9B62A40039CAE6 /* Page */,
 				09C9B9DF1D9B62630039CAE6 /* WebViewImgJson_0928 */,
 				09C9B9DE1D9B62620039CAE6 /* Products */,
 			);
@@ -77,6 +84,16 @@
 				09C9B9E11D9B62630039CAE6 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		09C9B9F71D9B62A40039CAE6 /* Page */ = {
+			isa = PBXGroup;
+			children = (
+				09C9B9F81D9B62A40039CAE6 /* HomePage.css */,
+				09C9B9F91D9B62A40039CAE6 /* HomePage.html */,
+				09C9B9FA1D9B62A40039CAE6 /* HomePage.js */,
+			);
+			path = Page;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +154,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				09C9B9F01D9B62630039CAE6 /* LaunchScreen.storyboard in Resources */,
+				09C9B9FB1D9B62A40039CAE6 /* HomePage.css in Resources */,
 				09C9B9ED1D9B62630039CAE6 /* Assets.xcassets in Resources */,
 				09C9B9EB1D9B62630039CAE6 /* Main.storyboard in Resources */,
+				09C9B9FD1D9B62A40039CAE6 /* HomePage.js in Resources */,
+				09C9B9FC1D9B62A40039CAE6 /* HomePage.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +284,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WebViewImgJson_0928/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Study.WebViewImgJson-0928";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -275,6 +296,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WebViewImgJson_0928/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Study.WebViewImgJson-0928";
 				PRODUCT_NAME = "$(TARGET_NAME)";
