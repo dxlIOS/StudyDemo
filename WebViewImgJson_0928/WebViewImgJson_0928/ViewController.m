@@ -58,6 +58,7 @@
     [self.personalWebView stringByEvaluatingJavaScriptFromString:jsString];
 }
 
+
 #pragma mark - parse method
 - (void) parseRequestFromHtmlPage:(NSString *)requestString
 {
@@ -74,15 +75,35 @@
 - (void) parseJSON:(NSMutableData *)data
 {
     NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-    NSArray *keys = [jsonDic allKeys];
-    NSDictionary *values = [jsonDic objectForKey:keys[0]];
+    id keys = [jsonDic allKeys];
+    id values = [jsonDic objectForKey:keys[0]];
     NSMutableString *jsString = [[NSMutableString alloc] init];
     [jsString appendString:@"var content = document.getElementById('content');"];
     [jsString appendString:@"content.innerHTML = '';"];
-    [jsString appendString:[NSString stringWithFormat:@"content.innerHTML += '%@:%@';",keys[0],[values objectForKey:@"city"] ]];
+    
+    //judge the type of keys and values
+    if ([keys isKindOfClass:[NSArray class]]) {
+        NSArray *array = keys;
+        for (NSUInteger i = 0; i < array.count; i++) {
+            [jsString appendString:[NSString stringWithFormat:@"content.innerHTML += '<p><b>%@:</b></p>';",keys[i]]];
+        }
+    }
+    
+    
+    if ([values isKindOfClass:[NSDictionary class]]) {
+        NSMutableDictionary *dic = values;
+        NSArray *subKeys = [dic allKeys];
+        NSArray *subValues = [dic allValues];
+        for (NSUInteger i = 0; i < dic.count; i++) {
+            [jsString appendString:[NSString stringWithFormat:@"content.innerHTML += '<p>%@:%@</p>';",subKeys[i],subValues[i]]];
+        }
+    }
+    
+//宏的测试
 #ifdef Dlog
     Dlog(@"%@",keys);
 #endif
+    
     [self.personalWebView stringByEvaluatingJavaScriptFromString:jsString];
 }
 

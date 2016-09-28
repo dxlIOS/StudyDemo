@@ -3,6 +3,11 @@ body
     text-align: center;
 }
 
+p
+{
+    margin: 0;
+}
+
 h3
 {
     font-size: 100px;
