@@ -9,7 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+{
+    UICollectionView *_collectionView;
+    NSMutableArray *_cellsHeight;
+}
 
+@property(nonatomic,retain)UICollectionView *collectionView;
+@property(nonatomic,retain)NSMutableArray *cellsHeight;
 
 @end
 
