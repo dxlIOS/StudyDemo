@@ -13,6 +13,7 @@
 		09E97B721D9C8A9100A2EFA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09E97B701D9C8A9100A2EFA7 /* Main.storyboard */; };
 		09E97B741D9C8A9100A2EFA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09E97B731D9C8A9100A2EFA7 /* Assets.xcassets */; };
 		09E97B771D9C8A9100A2EFA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09E97B751D9C8A9100A2EFA7 /* LaunchScreen.storyboard */; };
+		09E97B801D9D022A00A2EFA7 /* AdvanceCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E97B7F1D9D022A00A2EFA7 /* AdvanceCollectionView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		09E97B731D9C8A9100A2EFA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09E97B761D9C8A9100A2EFA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		09E97B781D9C8A9100A2EFA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09E97B7E1D9D022A00A2EFA7 /* AdvanceCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvanceCollectionView.h; sourceTree = "<group>"; };
+		09E97B7F1D9D022A00A2EFA7 /* AdvanceCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvanceCollectionView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,8 @@
 				09E97B6B1D9C8A9100A2EFA7 /* AppDelegate.m */,
 				09E97B6D1D9C8A9100A2EFA7 /* ViewController.h */,
 				09E97B6E1D9C8A9100A2EFA7 /* ViewController.m */,
+				09E97B7E1D9D022A00A2EFA7 /* AdvanceCollectionView.h */,
+				09E97B7F1D9D022A00A2EFA7 /* AdvanceCollectionView.m */,
 				09E97B701D9C8A9100A2EFA7 /* Main.storyboard */,
 				09E97B731D9C8A9100A2EFA7 /* Assets.xcassets */,
 				09E97B751D9C8A9100A2EFA7 /* LaunchScreen.storyboard */,
@@ -152,6 +157,7 @@
 				09E97B6F1D9C8A9100A2EFA7 /* ViewController.m in Sources */,
 				09E97B6C1D9C8A9100A2EFA7 /* AppDelegate.m in Sources */,
 				09E97B691D9C8A9100A2EFA7 /* main.m in Sources */,
+				09E97B801D9D022A00A2EFA7 /* AdvanceCollectionView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

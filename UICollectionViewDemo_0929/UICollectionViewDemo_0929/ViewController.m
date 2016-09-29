@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "AdvanceCollectionView.h"
 
 #define Column 4
 #define CellWidth (self.view.frame.size.width - 30) / 3
@@ -24,6 +25,8 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationController.navigationBar.translucent = NO;
     [self initUICollectionView];
+    [self createNewPageBtn];
+    
     
 }
 
@@ -54,7 +57,20 @@
     
 }
 
-//make waterfall layout for cell
+#pragma mark - create right button
+- (void)createNewPageBtn
+{
+    UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithTitle:@"下一页" style:UIBarButtonItemStylePlain target:self action:@selector(pushToNext)];
+    self.navigationItem.rightBarButtonItem = btn;
+}
+
+- (void) pushToNext
+{
+    AdvanceCollectionView *advanceView = [[AdvanceCollectionView alloc] init];
+    [self.navigationController pushViewController:advanceView animated:YES];
+}
+
+#pragma mark - make waterfall layout for cell
 - (void) makeNewFrameForCell:(UICollectionViewCell *)cell withIndexPath:(NSIndexPath *)indexPath
 {
     NSInteger columnIndex = indexPath.row % Column;
@@ -148,13 +164,12 @@
 
 - (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender
 {
-//    if ([NSStringFromSelector(action) isEqualToString:@"cut:"] || [NSStringFromSelector(action) isEqualToString:@"paste:"]) {
-//        return YES;
-//    }
+    if ([NSStringFromSelector(action) isEqualToString:@"cut:"] || [NSStringFromSelector(action) isEqualToString:@"paste:"]) {
+        return YES;
+    }
     return YES;
 }
 
-//failed: will crash when select
 - (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender
 {
     if ([NSStringFromSelector(action) isEqualToString:@"cut:"] ) {
