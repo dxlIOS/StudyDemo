@@ -21,6 +21,7 @@
     // Do any additional setup after loading the view.
     self.title = @"AlertCon";
     self.view.backgroundColor = [UIColor whiteColor];
+    NSLog(@"%f",self.navigationController.navigationBar.bounds.size.height);
     [self resetBarBtns];
 }
 
@@ -32,22 +33,16 @@
 #pragma mark - create elements
 - (void) resetBarBtns
 {
-    UIBarButtonItem *actionBtn = [[UIBarButtonItem alloc] initWithTitle:@"三" style:UIBarButtonItemStylePlain target:self action:@selector(createAlertThroughController)];
+    UIBarButtonItem *loginBtn = [[UIBarButtonItem alloc] initWithTitle:@"login" style:UIBarButtonItemStylePlain target:self action:@selector(createAlertThroughController)];
+    UIBarButtonItem *actionBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(createActionSheetThroughController)];
     UIBarButtonItem *popBtn = [[UIBarButtonItem alloc] initWithTitle:@"＜" style:UIBarButtonItemStylePlain target:self action:@selector(backToPre)];
     self.navigationItem.leftBarButtonItem = popBtn;
-    self.navigationItem.rightBarButtonItem = actionBtn;
+    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:loginBtn,actionBtn, nil];
 }
 
 - (void) backToPre
 {
     [self.navigationController popViewControllerAnimated:YES];
-}
-
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
-//    ;SEL func = self.navigationItem.rightBarButtonItem.action;
-    
-    
 }
 
 #pragma mark - two pattern of AlertController
@@ -63,19 +58,19 @@
         textField.keyboardAppearance = UIKeyboardAppearanceLight;
     }];
     [alertCon addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
-        textField.placeholder = @"Username";
+        textField.placeholder = @"Password";
         textField.textColor = [UIColor blackColor];
         textField.clearButtonMode = UITextFieldViewModeWhileEditing;
         textField.borderStyle = UITextBorderStyleBezel;
         textField.keyboardType = UIKeyboardTypeDefault;
         textField.keyboardAppearance = UIKeyboardAppearanceDark;
-        
+        textField.secureTextEntry = YES;
     }];
     [alertCon addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         NSArray *array = alertCon.textFields;
         UITextField *name = array[0];
         UITextField *pwd = array[1];
-        if ([name.text isEqualToString:@"dxl"] && [pwd.text isEqualToString:@"1234"])
+        if ([name.text isEqualToString:@"dxlzz"] && [pwd.text isEqualToString:@"zz868295"])
         {
             NormalView *view = [[NormalView alloc] init];
             [self.navigationController pushViewController:view animated:YES];
@@ -91,6 +86,7 @@
 {
     UIAlertController *alertCon = [UIAlertController alertControllerWithTitle:@"test" message:@"I'm a actionsheet" preferredStyle:UIAlertControllerStyleActionSheet];
     [alertCon addAction:[UIAlertAction actionWithTitle:@"changebgColor" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        self.view.backgroundColor = [UIColor colorWithRed:arc4random() % 255 / 255.0 green:arc4random() % 255 / 255.0 blue:arc4random() % 255 / 255.0 alpha:1];
         CATransition *tran = [[CATransition alloc] init];
         tran.type = @"cube";
         tran.subtype = kCATransitionFromRight;
@@ -99,12 +95,15 @@
         tran.endProgress = 1;
         tran.delegate = self;
         tran.removedOnCompletion = NO;
-        self.view.backgroundColor = [UIColor colorWithRed:arc4random() % 255 / 255.0 green:arc4random() % 255 / 255.0 blue:arc4random() % 255 / 255.0 alpha:1];
+        
+        [self.view.layer addAnimation:tran forKey:nil];
+        
     }]];
     [alertCon addAction:[UIAlertAction actionWithTitle:@"hello" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
     }]];
     [alertCon addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil]];
+    [self presentViewController:alertCon animated:YES completion:nil];
 }
 
 
@@ -117,10 +116,7 @@
 #pragma mark - CATransition delegate
 - (void)animationDidStart:(CAAnimation *)anim
 {
-    if ([anim isKindOfClass:[CATransition class]]) {
-        [anim setTimingFunction:[CAMediaTimingFunction functionWithName:@"printMessage"]];
-        
-    }
+    NSLog(@"Animation start");
 }
 
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag

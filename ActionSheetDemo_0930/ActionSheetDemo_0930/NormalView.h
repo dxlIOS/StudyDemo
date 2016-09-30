@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface NormalView : UIViewController
+<UIWebViewDelegate>
+{
+    UIWebView *_webView;
+}
 
+@property(nonatomic,retain)UIWebView *webView;
 @end

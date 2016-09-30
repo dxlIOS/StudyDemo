@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "NormalView.h"
 
 @interface AppDelegate ()
 
@@ -20,6 +21,7 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     ViewController *vc = [[ViewController alloc] init];
+//    NormalView *vc = [[NormalView alloc] init];
     UINavigationController *nv = [[UINavigationController alloc] initWithRootViewController:vc];
     
     self.window.rootViewController = nv;
