@@ -1,0 +1,32 @@
+body
+{
+    text-align: center;
+}
+
+p
+{
+    margin: 0;
+}
+
+h3
+{
+    font-size: 100px;
+}
+
+.bigSize
+{
+    width: 50%;
+    height: 10%;
+    font-size: 50px;
+    margin: 0 20px 0 20px;
+}
+
+#content
+{
+    width: 90%;
+    height: 80%;
+    font-size: 80px;
+    margin: 0 auto;
+    text-align: left;
+    word-wrap: break-word;
+}
